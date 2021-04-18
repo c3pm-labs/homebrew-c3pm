@@ -18,6 +18,6 @@ class C3pm < Formula
   end
 
   def install
-    bin.install "c3pm"
+    bin.install "ctpm"
   end
 end
