@@ -5,16 +5,21 @@
 class C3pm < Formula
   desc ""
   homepage ""
-  version "0.1.2"
+  version "0.2.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/c3pm-labs/c3pm/releases/download/v0.1.2/c3pm_0.1.2_Darwin_x86_64.tar.gz"
-    sha256 "83be71de9757d7cb5b8b929fc62cfaa6bfd17a228255b51cb0355ab33089efcd"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/c3pm-labs/c3pm/releases/download/v0.2.0/c3pm_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "0de990418e3a63f50650f5a8dd4f4669f8c1dba10e04ab273349581c6b192fc4"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/c3pm-labs/c3pm/releases/download/v0.1.2/c3pm_0.1.2_Linux_x86_64.tar.gz"
-    sha256 "938d5a2dce13240d87c2c2e67a0aca566a33544e7e6b76cc981246d708f2e2fa"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/c3pm-labs/c3pm/releases/download/v0.2.0/c3pm_0.2.0_Linux_x86_64.tar.gz"
+      sha256 "dba902a18d0e2a304ceeefbc686c7f3ed22093aa2c492b597f57093a20504fe8"
+    end
   end
 
   def install
