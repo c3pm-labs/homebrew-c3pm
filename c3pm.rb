@@ -5,24 +5,27 @@
 class C3pm < Formula
   desc ""
   homepage ""
-  version "0.2.0"
-  bottle :unneeded
+  version "0.3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/c3pm-labs/c3pm/releases/download/v0.2.0/c3pm_0.2.0_Darwin_x86_64.tar.gz"
-      sha256 "0de990418e3a63f50650f5a8dd4f4669f8c1dba10e04ab273349581c6b192fc4"
+      url "https://github.com/c3pm-labs/c3pm/releases/download/v0.3.0/c3pm_0.3.0_Darwin_x86_64.tar.gz"
+      sha256 "6f00e3356d3c5898a96d174d85af74aef82da8d65342f8e11e6a46d671551f4a"
+
+      def install
+        bin.install "ctpm"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/c3pm-labs/c3pm/releases/download/v0.2.0/c3pm_0.2.0_Linux_x86_64.tar.gz"
-      sha256 "dba902a18d0e2a304ceeefbc686c7f3ed22093aa2c492b597f57093a20504fe8"
-    end
-  end
+      url "https://github.com/c3pm-labs/c3pm/releases/download/v0.3.0/c3pm_0.3.0_Linux_x86_64.tar.gz"
+      sha256 "5275390c096c3928a1f865b2eb399f207866c30303f0975b46cacb9ef70dee52"
 
-  def install
-    bin.install "ctpm"
+      def install
+        bin.install "ctpm"
+      end
+    end
   end
 end
